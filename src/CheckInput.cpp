@@ -10,6 +10,7 @@
 #include <string>
 #include <map>
 #include "RectObject.h"
+#include <iostream>
 
 using namespace std;
 
@@ -31,6 +32,7 @@ int CheckInput::check(map<string, vector<RectObject> > label_map, map<string, ve
 		map<string, vector<RectObject> >::const_iterator find_it = detect_map.find(picname);
 		if(find_it != detect_map.end()){
 			count++;
+//			cout << picname << endl;
 		}
 		map_it++;
 	}

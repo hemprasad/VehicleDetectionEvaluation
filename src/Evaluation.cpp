@@ -37,8 +37,8 @@ int main(int argc, char**argv){
 	Evaluation e = Evaluation();
 
 	string labeled_file = "/home/lpan/workspace/computervision/resource/videolabel/labeled/labeled.txt";
-	string detect_file = "/home/lpan/workspace/computervision/resource/videolabel/labeled/labeled.txt";
-//	string detect_file = "/home/lpan/workspace/computervision/resource/detect.txt";
+//	string detect_file = "/home/lpan/workspace/computervision/resource/videolabel/labeled/labeled.txt";
+	string detect_file = "/home/lpan/workspace/computervision/resource/detect.txt";
 
 	if (argc == 3) {
 		labeled_file = argv[1];
@@ -65,9 +65,12 @@ int main(int argc, char**argv){
 	CheckInput ci = CheckInput();
 	int count = ci.check(label_map, detect_map);
 	int size = label_map.size();
-	if(count != size){
+	if(count == 0){
 		cout << "picture names do not match. " << endl;
 		return -1;
+	}
+	else if(count != size){
+		cout << (size - count) << " pictures do not match" << endl;
 	}
 
 //	RectArea ra = RectArea();
