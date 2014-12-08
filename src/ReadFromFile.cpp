@@ -36,10 +36,12 @@ map<string, vector<RectObject> > ReadFromFile::read(string dir){
 	while(getline(infile, s)){
 		vector<string> items;
 		s = util.trim(s);
+		cout << "s == " <<  s << endl;
 		util.split(s, " ", items);
 		if(items.size() < 2){
 			cerr << "error: format is wrong, check it in line " <<  count << endl;
-			break;
+			continue;
+//			break;
 		}
 		else{
 			picname = util.trim(items[0]);

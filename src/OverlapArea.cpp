@@ -77,8 +77,8 @@ void OverlapArea::getOneBitset(RectObject& rect, bitset<BITLENGTH>& bits){
 	int x = rect.x;
 	int y = rect.y;
 //	cout << "area:" << width*height << endl;
-	for(int i = x; i < x + width; i++){
-		for(int j = y; j < y + height; j++){
+	for(int i = x; i < x + height; i++){
+		for(int j = y; j < y + width; j++){
 			bits.set(j*PIC_WIDTH + i);
 		}
 	}

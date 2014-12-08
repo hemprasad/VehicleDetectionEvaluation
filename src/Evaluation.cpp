@@ -38,8 +38,8 @@ int main(int argc, char**argv){
 
 	string labeled_file = "/home/lpan/workspace/computervision/resource/videolabel/labeled/labeled.txt";
 //	string detect_file = "/home/lpan/workspace/computervision/resource/videolabel/labeled/labeled.txt";
-	string detect_file = "/home/lpan/workspace/computervision/resource/detect.txt";
-
+//	string detect_file = "/home/lpan/workspace/computervision/resource/detect.txt";
+	string detect_file = "/home/lpan/temp/output.txt";
 	if (argc == 3) {
 		labeled_file = argv[1];
 		detect_file = argv[2];
@@ -92,9 +92,11 @@ int main(int argc, char**argv){
 
 	double precise = (double)allArea.oArea/allArea.dArea;
 	double recall = (double)allArea.oArea/allArea.lArea;
+	double f_value = (precise * recall*2)/(precise + recall);
 	cout << "--------------------------------------------" << endl;
 	cout << "precise: " << precise << endl;
-	cout << " recall: " << recall << endl;
+	cout << "recall: " << recall << endl;
+	cout << "F-value: " << f_value << endl;
 }
 
 
